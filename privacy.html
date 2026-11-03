@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy · Termina</title>
+  <meta name="description" content="Informativa sulla privacy di Termina: nessun dato raccolto, tutto resta sul tuo dispositivo.">
+  <link rel="icon" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a href="index.html"><img src="icon-192x192.png" alt="Termina"></a>
+    <div class="brand">Termina<small>Informativa sulla privacy</small></div>
+    <nav class="lang" aria-label="Lingua">
+      <a href="privacy.html" aria-current="page" lang="it">Italiano</a>
+      <a href="en/privacy.html" lang="en">English</a>
+    </nav>
+  </header>
+
+  <h1>Privacy</h1>
+  <p class="meta">Ultimo aggiornamento: 3 novembre 2026</p>
+
+  <div class="card">
+    <ul class="summary">
+      <li>Termina non raccoglie, non invia e non vende alcun dato personale.</li>
+      <li>Non serve un account. Non ci sono pubblicità, statistiche d'uso o sistemi di tracciamento.</li>
+      <li>Server, password e chiavi restano sul tuo dispositivo. Non abbiamo server che li ricevano.</li>
+      <li>L'app si collega solo ai server SSH che configuri tu.</li>
+    </ul>
+  </div>
+
+  <h2>Titolare</h2>
+  <p>Enrico Fanucchi — contatto: <a href="mailto:enricofanucchi@gmail.com">enricofanucchi@gmail.com</a></p>
+
+  <h2>Dati conservati sul tuo dispositivo</h2>
+  <p>Per funzionare Termina salva alcune informazioni, solo in locale. Nessuna di queste lascia il dispositivo, salvo quanto descritto in “Connessioni di rete”.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dato</th><th>Dove e come</th></tr></thead>
+      <tbody>
+        <tr><td>Elenco dei server: nome, indirizzo, porta, utente, gruppo, colore, macro, tunnel, sessione tmux</td><td>File dell'app, cifrato dal sistema (Protezione dati di iOS) e leggibile solo a dispositivo sbloccato</td></tr>
+        <tr><td>Password, chiavi private e passphrase</td><td>Portachiavi di iOS, solo su questo dispositivo, protetti da Face ID o codice. Mai su iCloud; non si trasferiscono su un altro dispositivo, nemmeno ripristinando un backup</td></tr>
+        <tr><td>Chiavi generate nel Secure Enclave</td><td>Create e usate dentro il chip di sicurezza del dispositivo: non possono essere esportate, nemmeno da noi o dall'app</td></tr>
+        <tr><td>Impronte dei server (chiavi pubbliche) e preferenze dell'app</td><td>Impostazioni locali dell'app</td></tr>
+        <tr><td>File scaricati con SFTP</td><td>Cartella temporanea dell'app, svuotata da iOS quando serve spazio. Li salvi altrove solo se lo scegli tu</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Cosa non facciamo</h2>
+  <ul>
+    <li>Non gestiamo server che ricevano i tuoi dati: non esiste un “cloud di Termina”.</li>
+    <li>Non includiamo strumenti di analisi, raccolta di crash di terze parti o pubblicità.</li>
+    <li>Non condividiamo, cediamo o vendiamo dati a nessuno.</li>
+    <li>Le librerie open source usate dall'app (Citadel, SwiftNIO SSH, SwiftTerm) non trasmettono dati: implementano il protocollo SSH e il terminale.</li>
+  </ul>
+
+  <h2>Connessioni di rete</h2>
+  <p>Termina si collega solo agli indirizzi dei server che inserisci. Comandi, file e tunnel viaggiano cifrati con SSH direttamente tra il tuo dispositivo e il tuo server, senza passare da noi.</p>
+  <p>Al primo collegamento l'app ti mostra l'impronta del server, così puoi verificarne l'identità; se in seguito cambia, la connessione viene bloccata.</p>
+  <p>Per mostrarti se Tailscale è attivo, l'app legge le interfacce di rete del dispositivo. Questa informazione resta sul dispositivo.</p>
+
+  <h2>Permessi richiesti</h2>
+  <ul>
+    <li><strong>Face ID</strong>: per sbloccare password e chiavi. Il riconoscimento è gestito da iOS; l'app riceve solo l'esito (riuscito o no), mai dati biometrici.</li>
+    <li><strong>Rete locale</strong>: per raggiungere server nella tua rete (ad esempio un Mac mini o un NAS).</li>
+    <li><strong>File</strong>: l'app accede solo ai file che scegli tu, per importare una chiave o caricare file sul server.</li>
+  </ul>
+
+  <h2>Appunti</h2>
+  <p>Termina scrive negli appunti quando copi del testo. I programmi in esecuzione sul server non possono leggere i tuoi appunti.</p>
+
+  <h2>Diagnostica di Apple</h2>
+  <p>Se nelle Impostazioni di iOS hai scelto di condividere le analisi con gli sviluppatori, Apple può fornirci rapporti anonimi sugli arresti anomali. Li usiamo solo per correggere errori. Questa condivisione è regolata dall'<a href="https://www.apple.com/legal/privacy/">informativa di Apple</a> e puoi disattivarla in qualsiasi momento.</p>
+
+  <h2>Se ci scrivi</h2>
+  <p>Se contatti il supporto via email, usiamo il tuo indirizzo e il contenuto del messaggio solo per risponderti, e li conserviamo per il tempo necessario a gestire la richiesta. Puoi chiedere in qualsiasi momento di accedere a questi dati, correggerli o cancellarli scrivendo a <a href="mailto:enricofanucchi@gmail.com">enricofanucchi@gmail.com</a>. Se ritieni che i tuoi diritti non siano rispettati, puoi rivolgerti al Garante per la protezione dei dati personali.</p>
+  <p><strong>Non inviarci mai password o chiavi private</strong>: non ci servono per aiutarti.</p>
+
+  <h2>Cancellazione</h2>
+  <ul>
+    <li>Quando elimini un server, l'app cancella anche le sue credenziali dal Portachiavi.</li>
+    <li>Quando disinstalli l'app, iOS elimina i suoi file. iOS può conservare le voci del Portachiavi: per questo Termina le cancella da sola se viene reinstallata.</li>
+  </ul>
+
+  <h2>Minori</h2>
+  <p>Termina è uno strumento per amministrare server e non è rivolta ai bambini. Non raccogliamo dati di nessuno, minori compresi.</p>
+
+  <h2>Modifiche</h2>
+  <p>Se questa informativa cambia, aggiorneremo la data in cima alla pagina. Le modifiche importanti saranno indicate anche nelle note di versione dell'app.</p>
+
+  <footer><a href="support.html">Supporto</a> · <a href="index.html">Termina</a> · © 2026 Enrico Fanucchi</footer>
+</main>
+</body>
+</html>

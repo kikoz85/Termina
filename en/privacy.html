@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy · Termina</title>
+  <meta name="description" content="Termina privacy policy: no data collected, everything stays on your device.">
+  <link rel="icon" href="../favicon-32x32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a href="index.html"><img src="../icon-192x192.png" alt="Termina"></a>
+    <div class="brand">Termina<small>Privacy Policy</small></div>
+    <nav class="lang" aria-label="Language">
+      <a href="../privacy.html" lang="it">Italiano</a>
+      <a href="privacy.html" aria-current="page" lang="en">English</a>
+    </nav>
+  </header>
+
+  <h1>Privacy</h1>
+  <p class="meta">Last updated: November 3, 2026</p>
+
+  <div class="card">
+    <ul class="summary">
+      <li>Termina does not collect, transmit or sell any personal data.</li>
+      <li>No account is required. There are no ads, usage analytics or tracking of any kind.</li>
+      <li>Your servers, passwords and keys stay on your device. We have no servers that receive them.</li>
+      <li>The app only connects to the SSH servers you configure.</li>
+    </ul>
+  </div>
+
+  <h2>Data controller</h2>
+  <p>Enrico Fanucchi — contact: <a href="mailto:enricofanucchi@gmail.com">enricofanucchi@gmail.com</a></p>
+
+  <h2>Data stored on your device</h2>
+  <p>To work, Termina stores some information locally. None of it leaves your device, except as described under “Network connections”.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Data</th><th>Where and how</th></tr></thead>
+      <tbody>
+        <tr><td>Server list: name, address, port, user, group, color, macros, tunnels, tmux session</td><td>An app file encrypted by iOS Data Protection, readable only while the device is unlocked</td></tr>
+        <tr><td>Passwords, private keys and passphrases</td><td>The iOS Keychain, on this device only, protected by Face ID or passcode. Never in iCloud; they never move to another device, not even when restoring a backup</td></tr>
+        <tr><td>Keys generated in the Secure Enclave</td><td>Created and used inside the device's security chip: they cannot be exported, not even by us or by the app</td></tr>
+        <tr><td>Server fingerprints (public keys) and app preferences</td><td>The app's local settings</td></tr>
+        <tr><td>Files downloaded via SFTP</td><td>The app's temporary folder, cleared by iOS when space is needed. They are saved elsewhere only if you choose to</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>What we don't do</h2>
+  <ul>
+    <li>We run no servers that receive your data: there is no “Termina cloud”.</li>
+    <li>We include no analytics, third-party crash reporting or advertising.</li>
+    <li>We do not share, transfer or sell data to anyone.</li>
+    <li>The open-source libraries the app uses (Citadel, SwiftNIO SSH, SwiftTerm) do not transmit data: they implement the SSH protocol and the terminal.</li>
+  </ul>
+
+  <h2>Network connections</h2>
+  <p>Termina only connects to the server addresses you enter. Commands, files and tunnels travel encrypted over SSH directly between your device and your server, never through us.</p>
+  <p>On the first connection the app shows you the server's fingerprint so you can verify its identity; if it changes later, the connection is blocked.</p>
+  <p>To show whether Tailscale is active, the app reads the device's network interfaces. This information stays on the device.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><strong>Face ID</strong>: to unlock passwords and keys. Recognition is handled by iOS; the app only receives the result (success or failure), never biometric data.</li>
+    <li><strong>Local network</strong>: to reach servers on your network (for example a Mac mini or a NAS).</li>
+    <li><strong>Files</strong>: the app only accesses files you pick, to import a key or upload files to a server.</li>
+  </ul>
+
+  <h2>Clipboard</h2>
+  <p>Termina writes to the clipboard when you copy text. Programs running on the server cannot read your clipboard.</p>
+
+  <h2>Apple diagnostics</h2>
+  <p>If you chose to share analytics with app developers in iOS Settings, Apple may provide us with anonymous crash reports. We use them only to fix bugs. This sharing is governed by <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> and you can turn it off at any time.</p>
+
+  <h2>If you contact us</h2>
+  <p>If you email support, we use your address and the content of your message only to reply, and keep them only as long as needed to handle your request. You can ask at any time to access, correct or delete this data by writing to <a href="mailto:enricofanucchi@gmail.com">enricofanucchi@gmail.com</a>. If you believe your rights have not been respected, you can lodge a complaint with your data protection authority.</p>
+  <p><strong>Never send us passwords or private keys</strong>: we don't need them to help you.</p>
+
+  <h2>Deletion</h2>
+  <ul>
+    <li>When you delete a server, the app also deletes its credentials from the Keychain.</li>
+    <li>When you uninstall the app, iOS deletes its files. iOS may keep Keychain items, so Termina removes them by itself if it is reinstalled.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>Termina is a server administration tool and is not directed at children. We collect no data from anyone, including minors.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, we will update the date at the top of this page. Significant changes will also be noted in the app's release notes.</p>
+
+  <footer><a href="support.html">Support</a> · <a href="index.html">Termina</a> · © 2026 Enrico Fanucchi</footer>
+</main>
+</body>
+</html>

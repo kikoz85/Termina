@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supporto · Termina</title>
+  <meta name="description" content="Supporto di Termina: domande frequenti, scorciatoie da tastiera e contatti.">
+  <link rel="icon" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a href="index.html"><img src="icon-192x192.png" alt="Termina"></a>
+    <div class="brand">Termina<small>Supporto</small></div>
+    <nav class="lang" aria-label="Lingua">
+      <a href="support.html" aria-current="page" lang="it">Italiano</a>
+      <a href="en/support.html" lang="en">English</a>
+    </nav>
+  </header>
+
+  <h1>Supporto</h1>
+  <p class="meta">Termina 1.0 · iPhone e iPad con iOS/iPadOS 17 o successivo</p>
+
+  <div class="card">
+    <p style="margin-top:0"><strong>Scrivici</strong>: <a href="mailto:enricofanucchi@gmail.com?subject=Supporto%20Termina">enricofanucchi@gmail.com</a>. Rispondiamo di solito entro due giorni lavorativi.</p>
+    <p style="margin-bottom:0">Indica la versione dell'app (in fondo alle Impostazioni di Termina, <kbd>⌘,</kbd>), modello del dispositivo, versione di iOS e, se puoi, il sistema del server (es. <code>ssh -V</code>). <strong>Non inviare mai password o chiavi private.</strong></p>
+  </div>
+
+  <h2>Primi passi</h2>
+  <ol>
+    <li>Tocca <strong>+</strong> e inserisci indirizzo, porta e utente del server, oppure scrivi <code>utente@host:porta</code> in <strong>Connessione rapida</strong>.</li>
+    <li>Scegli l'autenticazione: password, chiave importata o chiave generata nel Secure Enclave.</li>
+    <li>Tocca il server: conferma l'impronta al primo collegamento e sei nella shell.</li>
+  </ol>
+
+  <h2>Domande frequenti</h2>
+
+  <details>
+    <summary>Come uso una chiave del Secure Enclave?</summary>
+    <p>Nella scheda del server scegli <strong>Secure Enclave</strong> e tocca <strong>Genera chiave</strong>. Copia la riga che inizia con <code>ecdsa-sha2-nistp256</code> e aggiungila a <code>~/.ssh/authorized_keys</code> sul server. La chiave privata non lascia mai il chip del dispositivo, quindi è valida solo su quel dispositivo: su un altro iPhone o iPad ne genererai un'altra.</p>
+  </details>
+
+  <details>
+    <summary>Quali chiavi posso importare?</summary>
+    <p>Chiavi OpenSSH <strong>Ed25519</strong> e <strong>RSA</strong>, anche protette da passphrase, che iniziano con <code>-----BEGIN OPENSSH PRIVATE KEY-----</code>. Se la tua chiave RSA è in un formato più vecchio, convertila sul computer con <code>ssh-keygen -p -f ~/.ssh/id_rsa</code>.</p>
+  </details>
+
+  <details>
+    <summary>Vedo “la host key è cambiata”: cosa faccio?</summary>
+    <p>Significa che il server si presenta con un'identità diversa da quella confermata in passato. Può succedere dopo una reinstallazione del server, ma può anche indicare un tentativo di intercettazione. Verifica l'impronta direttamente sul server (<code>ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub</code>). Se corrisponde, tieni premuto il server nell'elenco e scegli <strong>Dimentica host key</strong>, poi ricollegati.</p>
+  </details>
+
+  <details>
+    <summary>La mia tastiera non ha il tasto Esc</summary>
+    <p>Usa <kbd>⌘</kbd> <kbd>.</kbd> oppure il tasto <strong>esc</strong> della barra sopra la tastiera. In alternativa puoi trasformare Caps Lock in Esc: Impostazioni › Generali › Tastiera › Tastiera fisica › Tasti modificatori.</p>
+  </details>
+
+  <details>
+    <summary>Come premo Ctrl su iPhone?</summary>
+    <p>Tocca <strong>ctrl</strong> nella barra sopra la tastiera, poi il tasto desiderato: per esempio <strong>ctrl</strong> e poi <strong>c</strong> invia Ctrl-C. <strong>alt</strong> funziona allo stesso modo.</p>
+  </details>
+
+  <details>
+    <summary>Perché la sessione si chiude quando cambio app?</summary>
+    <p>iOS sospende le connessioni di rete delle app in background dopo circa 30 secondi. Termina si riconnette da sola quando torni. Per ritrovare la shell esattamente com'era, imposta una <strong>sessione tmux</strong> nella scheda del server (serve <code>tmux</code> installato sul server).</p>
+  </details>
+
+  <details>
+    <summary>Il tunnel locale non risponde da Safari</summary>
+    <p>I tunnel locali funzionano finché Termina resta in primo piano. Su iPad apri Safari e Termina affiancati (Split View o Slide Over), poi visita <code>http://localhost:PORTA</code>. Se il tunnel è in errore, controlla che sul server sia attivo <code>AllowTcpForwarding</code>.</p>
+  </details>
+
+  <details>
+    <summary>Come raggiungo i miei server con Tailscale?</summary>
+    <p>Installa e attiva l'app Tailscale, poi usa l'indirizzo <code>100.x.y.z</code> o il nome <code>*.ts.net</code> del server. Termina indica nella barra laterale se Tailscale è attivo.</p>
+  </details>
+
+  <details>
+    <summary>Come trasferisco e modifico i file?</summary>
+    <p>Durante una sessione apri <strong>File</strong> (<kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>F</kbd>). Trascina i file dall'app File per caricarli, tocca un file per vederlo o modificarlo (testo fino a 2 MB). Il salvataggio sostituisce l'originale solo a caricamento completato, mantenendo i permessi.</p>
+  </details>
+
+  <details>
+    <summary>Come elimino tutti i miei dati?</summary>
+    <p>Eliminando un server ne cancelli anche le credenziali. Disinstallando l'app elimini tutto il resto: alla successiva installazione Termina cancella anche le eventuali voci rimaste nel Portachiavi. Non conserviamo copie da nessuna parte: vedi la <a href="privacy.html">Privacy</a>.</p>
+  </details>
+
+  <h2>Scorciatoie da tastiera</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tasti</th><th>Azione</th></tr></thead>
+      <tbody>
+        <tr><td><kbd>⌘T</kbd> / <kbd>⌘W</kbd></td><td>Nuova tab / chiudi tab</td></tr>
+        <tr><td><kbd>⌘1</kbd>…<kbd>⌘9</kbd>, <kbd>⇧⌘[</kbd> <kbd>⇧⌘]</kbd></td><td>Vai alla tab / precedente / successiva</td></tr>
+        <tr><td><kbd>⌘K</kbd></td><td>Pulisci schermo e cronologia</td></tr>
+        <tr><td><kbd>⌘F</kbd>, <kbd>⌘G</kbd>, <kbd>⇧⌘G</kbd></td><td>Trova, successivo, precedente</td></tr>
+        <tr><td><kbd>⌘+</kbd> <kbd>⌘-</kbd> <kbd>⌘0</kbd></td><td>Dimensione del testo (anche con due dita)</td></tr>
+        <tr><td><kbd>⌘.</kbd></td><td>Esc</td></tr>
+        <tr><td><kbd>⇧⌘T</kbd> / <kbd>⇧⌘F</kbd></td><td>Tunnel / File</td></tr>
+        <tr><td><kbd>⌘N</kbd> / <kbd>⌘,</kbd></td><td>Nuovo server / Impostazioni</td></tr>
+        <tr><td><kbd>⌘R</kbd></td><td>Riconnetti una sessione chiusa</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer><a href="privacy.html">Privacy</a> · <a href="index.html">Termina</a> · © 2026 Enrico Fanucchi</footer>
+</main>
+</body>
+</html>
