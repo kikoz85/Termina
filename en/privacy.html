@@ -21,13 +21,14 @@
   </header>
 
   <h1>Privacy</h1>
-  <p class="meta">Last updated: November 3, 2026</p>
+  <p class="meta">Last updated: November 4, 2026</p>
 
   <div class="card">
     <ul class="summary">
       <li>Termina does not collect, transmit or sell any personal data.</li>
       <li>No account is required. There are no ads, usage analytics or tracking of any kind.</li>
-      <li>Your servers, passwords and keys stay on your device. We have no servers that receive them.</li>
+      <li>Your servers, passwords and keys stay on your devices. We have no servers that receive them.</li>
+      <li>If you turn on sync, they move between your devices through your own iCloud, end-to-end encrypted: neither Apple nor we can read them.</li>
       <li>The app only connects to the SSH servers you configure.</li>
     </ul>
   </div>
@@ -42,13 +43,21 @@
       <thead><tr><th>Data</th><th>Where and how</th></tr></thead>
       <tbody>
         <tr><td>Server list: name, address, port, user, group, color, macros, tunnels, tmux session</td><td>An app file encrypted by iOS Data Protection, readable only while the device is unlocked</td></tr>
-        <tr><td>Passwords, private keys and passphrases</td><td>The iOS Keychain, on this device only, protected by Face ID or passcode. Never in iCloud; they never move to another device, not even when restoring a backup</td></tr>
+        <tr><td>Passwords, private keys and passphrases</td><td>The device Keychain, protected by Face ID, Touch ID or passcode. With iCloud sync on, also in your iCloud, end-to-end encrypted (see “iCloud sync”)</td></tr>
         <tr><td>Keys generated in the Secure Enclave</td><td>Created and used inside the device's security chip: they cannot be exported, not even by us or by the app</td></tr>
         <tr><td>Server fingerprints (public keys) and app preferences</td><td>The app's local settings</td></tr>
         <tr><td>Files downloaded via SFTP</td><td>The app's temporary folder, cleared by iOS when space is needed. They are saved elsewhere only if you choose to</td></tr>
       </tbody>
     </table>
   </div>
+
+  <h2>iCloud sync</h2>
+  <p>With sync on (Settings → Sync, on by default) Termina stores your server list, macros, tunnels, trusted server fingerprints, passwords and private keys in the <strong>private database of your iCloud account</strong>, so you find everything on iPhone, iPad and Mac.</p>
+  <ul>
+    <li>Every item is end-to-end encrypted with keys kept in your account's iCloud Keychain: Apple can't read it, and we have no access to it at all.</li>
+    <li>Secure Enclave keys are never synced: they stay in the chip where they were created.</li>
+    <li>It uses your own iCloud storage. You can turn sync off at any time; data already saved stays in your iCloud until you delete it in Settings → [your name] → iCloud → Manage Storage.</li>
+  </ul>
 
   <h2>What we don't do</h2>
   <ul>
@@ -65,7 +74,7 @@
 
   <h2>Permissions</h2>
   <ul>
-    <li><strong>Face ID</strong>: to unlock passwords and keys. Recognition is handled by iOS; the app only receives the result (success or failure), never biometric data.</li>
+    <li><strong>Face ID / Touch ID</strong>: to unlock passwords and keys. Recognition is handled by iOS; the app only receives the result (success or failure), never biometric data.</li>
     <li><strong>Local network</strong>: to reach servers on your network (for example a Mac mini or a NAS).</li>
     <li><strong>Files</strong>: the app only accesses files you pick, to import a key or upload files to a server.</li>
   </ul>

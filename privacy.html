@@ -21,13 +21,14 @@
   </header>
 
   <h1>Privacy</h1>
-  <p class="meta">Ultimo aggiornamento: 3 novembre 2026</p>
+  <p class="meta">Ultimo aggiornamento: 4 novembre 2026</p>
 
   <div class="card">
     <ul class="summary">
       <li>Termina non raccoglie, non invia e non vende alcun dato personale.</li>
       <li>Non serve un account. Non ci sono pubblicità, statistiche d'uso o sistemi di tracciamento.</li>
-      <li>Server, password e chiavi restano sul tuo dispositivo. Non abbiamo server che li ricevano.</li>
+      <li>Server, password e chiavi restano sui tuoi dispositivi. Non abbiamo server che li ricevano.</li>
+      <li>Se attivi la sincronizzazione, passano tra i tuoi dispositivi attraverso il tuo iCloud, cifrati end-to-end: né Apple né noi possiamo leggerli.</li>
       <li>L'app si collega solo ai server SSH che configuri tu.</li>
     </ul>
   </div>
@@ -42,13 +43,21 @@
       <thead><tr><th>Dato</th><th>Dove e come</th></tr></thead>
       <tbody>
         <tr><td>Elenco dei server: nome, indirizzo, porta, utente, gruppo, colore, macro, tunnel, sessione tmux</td><td>File dell'app, cifrato dal sistema (Protezione dati di iOS) e leggibile solo a dispositivo sbloccato</td></tr>
-        <tr><td>Password, chiavi private e passphrase</td><td>Portachiavi di iOS, solo su questo dispositivo, protetti da Face ID o codice. Mai su iCloud; non si trasferiscono su un altro dispositivo, nemmeno ripristinando un backup</td></tr>
+        <tr><td>Password, chiavi private e passphrase</td><td>Portachiavi del dispositivo, protetti da Face ID, Touch ID o codice. Con la sincronizzazione iCloud attiva, anche nel tuo iCloud cifrati end-to-end (vedi “Sincronizzazione iCloud”)</td></tr>
         <tr><td>Chiavi generate nel Secure Enclave</td><td>Create e usate dentro il chip di sicurezza del dispositivo: non possono essere esportate, nemmeno da noi o dall'app</td></tr>
         <tr><td>Impronte dei server (chiavi pubbliche) e preferenze dell'app</td><td>Impostazioni locali dell'app</td></tr>
         <tr><td>File scaricati con SFTP</td><td>Cartella temporanea dell'app, svuotata da iOS quando serve spazio. Li salvi altrove solo se lo scegli tu</td></tr>
       </tbody>
     </table>
   </div>
+
+  <h2>Sincronizzazione iCloud</h2>
+  <p>Con la sincronizzazione attiva (Impostazioni → Sincronizzazione, attiva di default) Termina salva nel <strong>database privato del tuo account iCloud</strong> l'elenco dei server, le macro, i tunnel, le impronte dei server fidati, le password e le chiavi private, così ritrovi tutto su iPhone, iPad e Mac.</p>
+  <ul>
+    <li>Ogni dato è cifrato end-to-end con chiavi custodite nel Portachiavi iCloud del tuo account: Apple non può leggerlo, e noi non vi abbiamo alcun accesso.</li>
+    <li>Le chiavi del Secure Enclave non vengono mai sincronizzate: restano nel chip dove sono nate.</li>
+    <li>Lo spazio usato è quello del tuo iCloud. Puoi spegnere la sincronizzazione in qualsiasi momento; i dati già salvati restano nel tuo iCloud finché non li elimini da Impostazioni → [il tuo nome] → iCloud → Gestisci spazio.</li>
+  </ul>
 
   <h2>Cosa non facciamo</h2>
   <ul>
@@ -65,7 +74,7 @@
 
   <h2>Permessi richiesti</h2>
   <ul>
-    <li><strong>Face ID</strong>: per sbloccare password e chiavi. Il riconoscimento è gestito da iOS; l'app riceve solo l'esito (riuscito o no), mai dati biometrici.</li>
+    <li><strong>Face ID / Touch ID</strong>: per sbloccare password e chiavi. Il riconoscimento è gestito da iOS; l'app riceve solo l'esito (riuscito o no), mai dati biometrici.</li>
     <li><strong>Rete locale</strong>: per raggiungere server nella tua rete (ad esempio un Mac mini o un NAS).</li>
     <li><strong>File</strong>: l'app accede solo ai file che scegli tu, per importare una chiave o caricare file sul server.</li>
   </ul>
