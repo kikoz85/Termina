@@ -29,6 +29,7 @@
   - [6. Port forwarding (tunnel)](#6-port-forwarding-tunnel)
   - [7. Sessioni che sopravvivono: tmux](#7-sessioni-che-sopravvivono-tmux)
   - [8. Impostazioni e lingua](#8-impostazioni-e-lingua)
+  - [9. Sincronizzazione tra iPhone, iPad e Mac](#9-sincronizzazione-tra-iphone-ipad-e-mac)
   - [Scorciatoie da tastiera](#scorciatoie-da-tastiera)
 - [Sicurezza e privacy](#sicurezza-e-privacy)
 - [Risoluzione dei problemi](#risoluzione-dei-problemi)
@@ -44,6 +45,8 @@
 - **Port forwarding**: tunnel locali (-L) e remoti (-R) con stato e traffico in tempo reale.
 - **Credenziali sicure**: password e chiavi nel Portachiavi, sbloccate con Face ID o Touch ID; chiavi hardware
   generate nel **Secure Enclave**, che non possono mai essere copiate.
+- **Sincronizzazione iCloud**: server, macro, tunnel, password e chiavi su tutti i tuoi iPhone, iPad e Mac,
+  cifrati end-to-end, senza creare account.
 - **Tailscale** riconosciuto da solo; **tmux** tiene viva la shell quando la connessione cade.
 - 5 lingue: italiano, English, Français, Deutsch, Español.
 
@@ -174,6 +177,21 @@ Apri le **Impostazioni** con l'ingranaggio (o ⌘,):
   scegli English, Italiano, Français, Deutsch o Español. La nuova lingua vale dalla prossima apertura dell'app;
   sul Mac puoi riavviarla subito.
 
+### 9. Sincronizzazione tra iPhone, iPad e Mac
+
+Termina tiene allineati i tuoi dispositivi attraverso **il tuo iCloud**: non c'è un account Termina da creare.
+È attiva di default (*Impostazioni → Sincronizzazione → iCloud*); basta aver fatto l'accesso con lo stesso
+Apple Account su ogni dispositivo.
+
+- **Cosa si sincronizza**: server (con gruppi, colori, icone), macro, tunnel, host key fidate, password e chiavi
+  private. Aggiungi un server sul Mac e ti colleghi dall'iPad senza riscrivere la password.
+- **Privacy**: tutto è cifrato end-to-end con chiavi del tuo Portachiavi iCloud; Apple non può leggerlo.
+- **Cosa resta su ogni dispositivo**: le chiavi Secure Enclave (non escono mai dal chip: creane una per
+  dispositivo e aggiungi ogni chiave pubblica ad `authorized_keys`) e l'elenco dei server recenti.
+- Le modifiche arrivano in pochi secondi; **Sincronizza ora** nelle Impostazioni forza un controllo. Se due
+  dispositivi modificano lo stesso server, vince la modifica più recente.
+- Le password salvate prima di attivare la sincronizzazione partono la prima volta che le usi per collegarti.
+
 ### Scorciatoie da tastiera
 
 | Tasti | Azione |
@@ -194,10 +212,11 @@ Su iPad tieni premuto **⌘** per vedere tutte le scorciatoie.
 ## Sicurezza e privacy
 
 - Password e chiavi private sono salvate solo nel **Portachiavi** del dispositivo, protette da Face ID, Touch ID o
-  dal codice. Non vanno mai su iCloud e non si trasferiscono su un altro dispositivo, nemmeno con un backup.
+  dal codice. Con la sincronizzazione iCloud attiva viaggiano anche nel tuo iCloud, cifrate end-to-end: né
+  Apple né lo sviluppatore possono leggerle.
 - Le chiavi Secure Enclave nascono dentro il chip e **non si possono estrarre**, nemmeno da Termina.
 - L'identità di ogni server viene verificata (fingerprint della host key) per proteggerti dagli attacchi man-in-the-middle.
-- Niente account, niente statistiche, nessun tracciamento: Termina si collega solo ai server che aggiungi tu.
+- Niente account, niente statistiche, nessun tracciamento: Termina si collega solo ai server che aggiungi tu (e, con la sincronizzazione attiva, al tuo iCloud).
 
 Informativa completa: [Privacy](https://kikoz85.github.io/Termina/privacy.html).
 
@@ -211,6 +230,7 @@ Informativa completa: [Privacy](https://kikoz85.github.io/Termina/privacy.html).
 | `100.x.x.x` o `*.ts.net` non raggiungibili | Attiva la VPN Tailscale sul dispositivo. |
 | La connessione cade in background | Usa una **sessione tmux** (vedi la guida, punto 7). |
 | Le lettere accentate con Option non funzionano | Disattiva **Option come Meta** nelle Impostazioni. |
+| Un server non compare su un altro dispositivo | Verifica di aver fatto l'accesso a iCloud con lo stesso Apple Account, poi **Impostazioni → Sincronizza ora**. |
 
 ## Supporto
 

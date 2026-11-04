@@ -29,6 +29,7 @@
   - [6. Port forwarding (tunnels)](#6-port-forwarding-tunnels)
   - [7. Sessions that survive: tmux](#7-sessions-that-survive-tmux)
   - [8. Settings and language](#8-settings-and-language)
+  - [9. Sync between iPhone, iPad and Mac](#9-sync-between-iphone-ipad-and-mac)
   - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Security and privacy](#security-and-privacy)
 - [Troubleshooting](#troubleshooting)
@@ -44,6 +45,8 @@
 - **Port forwarding**: local (-L) and remote (-R) tunnels with live status and traffic.
 - **Secure credentials**: passwords and keys in the Keychain, unlocked with Face ID or Touch ID;
   hardware keys generated in the **Secure Enclave** that can never be copied.
+- **iCloud sync**: servers, macros, tunnels, passwords and keys on all your iPhone, iPad and Mac,
+  end-to-end encrypted, with no account to create.
 - **Tailscale** detected automatically; **tmux** keeps your shell alive when the connection drops.
 - 5 languages: English, Italiano, Français, Deutsch, Español.
 
@@ -171,6 +174,21 @@ Open **Settings** with the gear button (or ⌘,):
 - **Language**: *Automatic* follows your system language (English if your language is not available), or choose
   English, Italiano, Français, Deutsch or Español. The new language applies the next time the app opens; on Mac you can restart it right away.
 
+### 9. Sync between iPhone, iPad and Mac
+
+Termina keeps your devices in step through **your own iCloud**: there is no Termina account to create.
+It is on by default (*Settings → Sync → iCloud*); you only need to be signed in with the same Apple Account
+on every device.
+
+- **What syncs**: servers (with groups, colours, icons), macros, tunnels, trusted host keys, passwords and
+  private keys. Add a server on the Mac and connect from the iPad without typing the password again.
+- **Privacy**: everything is end-to-end encrypted with keys in your iCloud Keychain; Apple can't read it.
+- **What stays on each device**: Secure Enclave keys (they never leave the chip: create one per device and
+  add each public key to `authorized_keys`) and the list of recent servers.
+- Changes arrive within seconds; **Sync Now** in Settings forces a check. If two devices edit the same
+  server, the most recent change wins.
+- Passwords saved before sync was turned on are uploaded the first time you connect with them.
+
 ### Keyboard shortcuts
 
 | Keys | Action |
@@ -191,10 +209,11 @@ On iPad, hold **⌘** to see every shortcut.
 ## Security and privacy
 
 - Passwords and private keys are stored only in your device's **Keychain**, protected by Face ID, Touch ID or your
-  passcode. They are never synced to iCloud and cannot be moved to another device, not even with a backup.
+  passcode. With iCloud sync on they also travel through your own iCloud, end-to-end encrypted: neither
+  Apple nor the developer can read them.
 - Secure Enclave keys are created inside the chip and **cannot be extracted**, not even by Termina.
 - Every server's identity is checked (host key fingerprint) to protect you from man-in-the-middle attacks.
-- No accounts, no analytics, no tracking: Termina connects only to the servers you add.
+- No accounts, no analytics, no tracking: Termina connects only to the servers you add (and, with sync on, to your own iCloud).
 
 Full policy: [Privacy](https://kikoz85.github.io/Termina/en/privacy.html).
 
@@ -208,6 +227,7 @@ Full policy: [Privacy](https://kikoz85.github.io/Termina/en/privacy.html).
 | `100.x.x.x` or `*.ts.net` unreachable | Turn on the Tailscale VPN on your device. |
 | The connection drops in the background | Use a **tmux session** (see the guide, section 7). |
 | Accented letters with Option don't work | Turn off **Option as Meta** in Settings. |
+| A server doesn't appear on another device | Check you are signed in to iCloud with the same Apple Account, then **Settings → Sync Now**. |
 
 ## Support
 
