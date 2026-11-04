@@ -36,7 +36,8 @@
   - [13. Import from ~/.ssh](#13-import-from-ssh)
   - [14. Jump hosts](#14-jump-hosts)
   - [15. SSH agent forwarding](#15-ssh-agent-forwarding)
-  - [16. Built-in guide](#16-built-in-guide)
+  - [16. Siri, Shortcuts and Spotlight](#16-siri-shortcuts-and-spotlight)
+  - [17. Built-in guide](#17-built-in-guide)
   - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Security and privacy](#security-and-privacy)
 - [Troubleshooting](#troubleshooting)
@@ -55,6 +56,7 @@
 - **Snippets and history**: saved commands with `{{variables}}` for every server, and each server's history.
 - **Import from `~/.ssh`**: your servers, keys, jump hosts, tunnels and host keys in one go.
 - **Jump hosts and agent forwarding**: reach servers behind a bastion; use your key for `git` on the server.
+- **Siri, Shortcuts and Spotlight**: “Connect to homelab with Termina”, one tap from Shortcuts or Spotlight.
 - **On-device assistant**: ask "find the biggest files" or "explain this error" and get the right command
   with a plain explanation. It runs on Apple Intelligence on your device: nothing leaves it.
 - **Handoff**: start on the Mac, continue on the iPad with one tap, on the same server.
@@ -266,7 +268,19 @@ the key you logged in with, without the key ever being copied: for example `git 
 iPhone's key. `ssh-add -l` on the server shows it. Only enable it on servers you trust: while you are
 connected, whoever controls the server can use the key. Works with Ed25519 and Secure Enclave keys.
 
-### 16. Built-in guide
+### 16. Siri, Shortcuts and Spotlight
+
+Termina's actions appear on their own, with your servers and snippets. There's nothing to set up:
+
+- **Siri**: say “Connect to homelab with Termina” or “Open homelab in Termina”, using your server's name.
+- **Shortcuts**: open Termina in the Shortcuts app. There's a button for each server and one for each snippet
+  (it asks which server to run it on). You can use them in automations, widgets and with the Action button.
+- **Spotlight**: type a server's name and tap it to connect (iOS 18 and later).
+
+Termina always opens before connecting, so Face ID, host key confirmation and passwords work as usual. If a
+snippet has values to fill in, the app asks for them before running it.
+
+### 17. Built-in guide
 
 Every feature is explained step by step inside the app: **Settings → Guide**, the **How to Use Termina** link
 on the welcome screen, or **Help → Termina Guide** (⌘?) on the Mac.

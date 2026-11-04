@@ -36,7 +36,8 @@
   - [13. Importare da ~/.ssh](#13-importare-da-ssh)
   - [14. Jump host](#14-jump-host)
   - [15. Inoltro dell'agente SSH](#15-inoltro-dellagente-ssh)
-  - [16. Guida interna](#16-guida-interna)
+  - [16. Siri, Comandi rapidi e Spotlight](#16-siri-comandi-rapidi-e-spotlight)
+  - [17. Guida interna](#17-guida-interna)
   - [Scorciatoie da tastiera](#scorciatoie-da-tastiera)
 - [Sicurezza e privacy](#sicurezza-e-privacy)
 - [Risoluzione dei problemi](#risoluzione-dei-problemi)
@@ -55,6 +56,7 @@
 - **Snippet e cronologia**: comandi salvati con `{{variabili}}` per tutti i server, e la cronologia di ogni server.
 - **Import da `~/.ssh`**: server, chiavi, jump host, tunnel e host key in un colpo solo.
 - **Jump host e inoltro dell'agente**: raggiungi i server dietro un bastion; usa la tua chiave per `git` sul server.
+- **Siri, Comandi rapidi e Spotlight**: «Connetti a homelab con Termina», un tocco da Comandi rapidi o Spotlight.
 - **Assistente sul dispositivo**: chiedi "trova i file più grandi" o "spiegami questo errore" e ottieni il
   comando giusto con una spiegazione semplice. Usa Apple Intelligence sul dispositivo: niente esce da lì.
 - **Handoff**: inizi sul Mac, continui sull'iPad con un tocco, sullo stesso server.
@@ -268,7 +270,20 @@ potranno usare la chiave con cui sei entrato senza che venga mai copiata: per es
 la chiave dell'iPhone. Sul server `ssh-add -l` la mostra. Attivalo solo sui server di cui ti fidi: finché sei
 collegato, chi controlla il server può usare la chiave. Funziona con chiavi Ed25519 e Secure Enclave.
 
-### 16. Guida interna
+### 16. Siri, Comandi rapidi e Spotlight
+
+Le azioni di Termina compaiono da sole, con i tuoi server e i tuoi snippet. Non c'è niente da configurare:
+
+- **Siri**: di' «Connetti a homelab con Termina» oppure «Apri homelab in Termina», con il nome del tuo server.
+- **Comandi rapidi**: apri Termina nell'app Comandi rapidi. C'è un pulsante per ogni server e uno per ogni
+  snippet (ti chiede su quale server eseguirlo). Puoi usarli anche nelle automazioni, nei widget e con il
+  tasto Azione.
+- **Spotlight**: scrivi il nome di un server e toccalo per collegarti (da iOS 18).
+
+Termina si apre sempre prima di collegarsi: Face ID, conferma della host key e password funzionano come al
+solito. Se uno snippet ha valori da riempire, l'app te li chiede prima di eseguirlo.
+
+### 17. Guida interna
 
 Ogni funzione è spiegata passo per passo dentro l'app: **Impostazioni → Guida**, il link **Come si usa Termina**
 nella schermata iniziale o **Aiuto → Guida di Termina** (⌘?) sul Mac.
