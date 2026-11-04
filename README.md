@@ -31,6 +31,8 @@
   - [8. Settings and language](#8-settings-and-language)
   - [9. Sync between iPhone, iPad and Mac](#9-sync-between-iphone-ipad-and-mac)
   - [10. Handoff: continue on another device](#10-handoff-continue-on-another-device)
+  - [11. The assistant](#11-the-assistant)
+  - [12. Built-in guide](#12-built-in-guide)
   - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Security and privacy](#security-and-privacy)
 - [Troubleshooting](#troubleshooting)
@@ -46,6 +48,8 @@
 - **Port forwarding**: local (-L) and remote (-R) tunnels with live status and traffic.
 - **Secure credentials**: passwords and keys in the Keychain, unlocked with Face ID or Touch ID;
   hardware keys generated in the **Secure Enclave** that can never be copied.
+- **On-device assistant**: ask "find the biggest files" or "explain this error" and get the right command
+  with a plain explanation. It runs on Apple Intelligence on your device: nothing leaves it.
 - **Handoff**: start on the Mac, continue on the iPad with one tap, on the same server.
 - **iCloud sync**: servers, macros, tunnels, passwords and keys on all your iPhone, iPad and Mac,
   end-to-end encrypted, with no account to create.
@@ -202,6 +206,25 @@ opens there.
   add to `~/.bashrc` `PROMPT_COMMAND='printf "\e]7;file://%s%s\e\\" "$HOSTNAME" "$PWD"'`).
 - It needs the same Apple Account, Bluetooth and Wi‑Fi on, and **Handoff** enabled (Settings → General →
   AirPlay & Continuity on iPhone/iPad, System Settings → General → AirDrop & Handoff on Mac).
+
+### 11. The assistant
+
+During a session tap **✦ Assistant** in the toolbar (⇧⌘I).
+
+- **What do you want to do?** Write it in your own words, in any of the app's languages: "find the biggest
+  files", "who is logged in?", "show nginx errors".
+- **Explain the terminal output**: explains what is on screen, for example an error, and the next step.
+- **Explain a command**: paste a command to find out what it does before running it.
+
+Commands marked **From the Termina Recipe Book** are checked by hand; **Generated** ones must be verified. An
+orange warning flags commands that delete or change something. The assistant never runs anything: **Insert**
+types the command into the terminal and you press Return. It needs Apple Intelligence (iPhone 15 Pro or later,
+iPad and Mac with Apple silicon, iOS/iPadOS/macOS 26) and works offline.
+
+### 12. Built-in guide
+
+Every feature is explained step by step inside the app: **Settings → Guide**, the **How to Use Termina** link
+on the welcome screen, or **Help → Termina Guide** (⌘?) on the Mac.
 
 ### Keyboard shortcuts
 

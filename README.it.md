@@ -31,6 +31,8 @@
   - [8. Impostazioni e lingua](#8-impostazioni-e-lingua)
   - [9. Sincronizzazione tra iPhone, iPad e Mac](#9-sincronizzazione-tra-iphone-ipad-e-mac)
   - [10. Handoff: continuare su un altro dispositivo](#10-handoff-continuare-su-un-altro-dispositivo)
+  - [11. L'assistente](#11-lassistente)
+  - [12. Guida interna](#12-guida-interna)
   - [Scorciatoie da tastiera](#scorciatoie-da-tastiera)
 - [Sicurezza e privacy](#sicurezza-e-privacy)
 - [Risoluzione dei problemi](#risoluzione-dei-problemi)
@@ -46,6 +48,8 @@
 - **Port forwarding**: tunnel locali (-L) e remoti (-R) con stato e traffico in tempo reale.
 - **Credenziali sicure**: password e chiavi nel Portachiavi, sbloccate con Face ID o Touch ID; chiavi hardware
   generate nel **Secure Enclave**, che non possono mai essere copiate.
+- **Assistente sul dispositivo**: chiedi "trova i file più grandi" o "spiegami questo errore" e ottieni il
+  comando giusto con una spiegazione semplice. Usa Apple Intelligence sul dispositivo: niente esce da lì.
 - **Handoff**: inizi sul Mac, continui sull'iPad con un tocco, sullo stesso server.
 - **Sincronizzazione iCloud**: server, macro, tunnel, password e chiavi su tutti i tuoi iPhone, iPad e Mac,
   cifrati end-to-end, senza creare account.
@@ -204,6 +208,25 @@ al **Dock** su Mac e iPad e nel **selettore app** su iPhone. Toccala e lì si ap
   aggiungi a `~/.bashrc` `PROMPT_COMMAND='printf "\e]7;file://%s%s\e\\" "$HOSTNAME" "$PWD"'`).
 - Serve lo stesso Apple Account, Bluetooth e Wi‑Fi attivi e **Handoff** abilitato (Impostazioni → Generali →
   AirPlay e Continuity su iPhone/iPad, Impostazioni di Sistema → Generali → AirDrop e Handoff sul Mac).
+
+### 11. L'assistente
+
+Durante una sessione tocca **✦ Assistente** nella barra in alto (⇧⌘I).
+
+- **Cosa vuoi fare?** Scrivilo con parole tue, in una delle lingue dell'app: "trova i file più grandi",
+  "chi è collegato?", "fammi vedere gli errori di nginx".
+- **Spiega l'output del terminale**: spiega quello che vedi, per esempio un errore, e il passo successivo.
+- **Spiega un comando**: incolla un comando per sapere cosa fa prima di lanciarlo.
+
+I comandi **Dal ricettario di Termina** sono controllati a mano; quelli **Generati** vanno verificati. Un avviso
+arancione segnala i comandi che cancellano o modificano qualcosa. L'assistente non esegue mai nulla:
+**Inserisci** scrive il comando nel terminale e lo lanci tu con Invio. Serve Apple Intelligence (iPhone 15 Pro
+o successivi, iPad e Mac con Apple silicon, iOS/iPadOS/macOS 26); funziona anche offline.
+
+### 12. Guida interna
+
+Ogni funzione è spiegata passo per passo dentro l'app: **Impostazioni → Guida**, il link **Come si usa Termina**
+nella schermata iniziale o **Aiuto → Guida di Termina** (⌘?) sul Mac.
 
 ### Scorciatoie da tastiera
 
