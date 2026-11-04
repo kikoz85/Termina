@@ -32,7 +32,11 @@
   - [9. Sync between iPhone, iPad and Mac](#9-sync-between-iphone-ipad-and-mac)
   - [10. Handoff: continue on another device](#10-handoff-continue-on-another-device)
   - [11. The assistant](#11-the-assistant)
-  - [12. Built-in guide](#12-built-in-guide)
+  - [12. Snippets and history](#12-snippets-and-history)
+  - [13. Import from ~/.ssh](#13-import-from-ssh)
+  - [14. Jump hosts](#14-jump-hosts)
+  - [15. SSH agent forwarding](#15-ssh-agent-forwarding)
+  - [16. Built-in guide](#16-built-in-guide)
   - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Security and privacy](#security-and-privacy)
 - [Troubleshooting](#troubleshooting)
@@ -48,6 +52,9 @@
 - **Port forwarding**: local (-L) and remote (-R) tunnels with live status and traffic.
 - **Secure credentials**: passwords and keys in the Keychain, unlocked with Face ID or Touch ID;
   hardware keys generated in the **Secure Enclave** that can never be copied.
+- **Snippets and history**: saved commands with `{{variables}}` for every server, and each server's history.
+- **Import from `~/.ssh`**: your servers, keys, jump hosts, tunnels and host keys in one go.
+- **Jump hosts and agent forwarding**: reach servers behind a bastion; use your key for `git` on the server.
 - **On-device assistant**: ask "find the biggest files" or "explain this error" and get the right command
   with a plain explanation. It runs on Apple Intelligence on your device: nothing leaves it.
 - **Handoff**: start on the Mac, continue on the iPad with one tap, on the same server.
@@ -221,7 +228,45 @@ orange warning flags commands that delete or change something. The assistant nev
 types the command into the terminal and you press Return. It needs Apple Intelligence (iPhone 15 Pro or later,
 iPad and Mac with Apple silicon, iOS/iPadOS/macOS 26) and works offline.
 
-### 12. Built-in guide
+### 12. Snippets and history
+
+During a session tap **{} Commands** in the Command Deck or in the toolbar (⇧⌘S).
+
+- **Snippets** are saved commands that work on every server and reach your other devices through iCloud. Tap
+  **+**, give it a name and a command, choose whether it runs right away or is only typed in.
+- Variables in double braces adapt the command: `{{host}}`, `{{user}}`, `{{port}}`, `{{label}}` and `{{dir}}`
+  (the current folder) fill in by themselves; any other name, like `{{service}}` in
+  `journalctl -u {{service}}`, is asked each time.
+- **History** lists the commands you ran on that server, newest first. Tap one to type it again; touch and
+  hold to run it or save it as a snippet. It stays on the device, and like the shell it skips commands that
+  start with a space.
+
+### 13. Import from ~/.ssh
+
+If you already use `ssh` on a Mac or PC, bring your servers over in one go: touch and hold **+** in the
+server list (on the Mac also **File → Import from ~/.ssh…**) and choose the `.ssh` folder. On the Mac it is in
+your home folder and hidden: press **⌘⇧.** in the panel to see it. On iPhone and iPad copy it to iCloud Drive
+first, or paste just the `config` file.
+
+Termina reads `Host`, `HostName`, `User`, `Port`, `IdentityFile`, `ProxyJump`, `LocalForward`, `RemoteForward`
+and `ForwardAgent`, includes the private keys, and trusts the Ed25519 host keys from `known_hosts` (hashed ones
+too). You see a preview and pick what to import; servers you already have are unticked. Servers without a
+key ask for the password on the first connection and remember it. Your files are never changed.
+
+### 14. Jump hosts
+
+For a server you can only reach through another one (a bastion): add the bastion as a normal server, then
+edit the destination and choose it under **Routing → Jump Host**. Termina connects through it like `ssh -J`,
+with a single Face ID, and the connection stays encrypted end to end. Chains of up to 4 hops are supported.
+
+### 15. SSH agent forwarding
+
+Turn on **Routing → Forward SSH Agent** for a server and programs running there, like `git` or `ssh`, can use
+the key you logged in with, without the key ever being copied: for example `git pull` from GitHub with your
+iPhone's key. `ssh-add -l` on the server shows it. Only enable it on servers you trust: while you are
+connected, whoever controls the server can use the key. Works with Ed25519 and Secure Enclave keys.
+
+### 16. Built-in guide
 
 Every feature is explained step by step inside the app: **Settings → Guide**, the **How to Use Termina** link
 on the welcome screen, or **Help → Termina Guide** (⌘?) on the Mac.
@@ -237,6 +282,7 @@ on the welcome screen, or **Help → Termina Guide** (⌘?) on the Mac.
 | ⌘+ ⌘- ⌘0 | Text size |
 | ⌘. | Esc |
 | ⇧⌘T | Tunnels |
+| ⇧⌘S | Snippets and history |
 | ⇧⌘F, ⌘↑ | Files, parent folder |
 | ⌘N / ⌘, | New server / Settings |
 | ⌘R | Reconnect |

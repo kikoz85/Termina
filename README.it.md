@@ -32,7 +32,11 @@
   - [9. Sincronizzazione tra iPhone, iPad e Mac](#9-sincronizzazione-tra-iphone-ipad-e-mac)
   - [10. Handoff: continuare su un altro dispositivo](#10-handoff-continuare-su-un-altro-dispositivo)
   - [11. L'assistente](#11-lassistente)
-  - [12. Guida interna](#12-guida-interna)
+  - [12. Snippet e cronologia](#12-snippet-e-cronologia)
+  - [13. Importare da ~/.ssh](#13-importare-da-ssh)
+  - [14. Jump host](#14-jump-host)
+  - [15. Inoltro dell'agente SSH](#15-inoltro-dellagente-ssh)
+  - [16. Guida interna](#16-guida-interna)
   - [Scorciatoie da tastiera](#scorciatoie-da-tastiera)
 - [Sicurezza e privacy](#sicurezza-e-privacy)
 - [Risoluzione dei problemi](#risoluzione-dei-problemi)
@@ -48,6 +52,9 @@
 - **Port forwarding**: tunnel locali (-L) e remoti (-R) con stato e traffico in tempo reale.
 - **Credenziali sicure**: password e chiavi nel Portachiavi, sbloccate con Face ID o Touch ID; chiavi hardware
   generate nel **Secure Enclave**, che non possono mai essere copiate.
+- **Snippet e cronologia**: comandi salvati con `{{variabili}}` per tutti i server, e la cronologia di ogni server.
+- **Import da `~/.ssh`**: server, chiavi, jump host, tunnel e host key in un colpo solo.
+- **Jump host e inoltro dell'agente**: raggiungi i server dietro un bastion; usa la tua chiave per `git` sul server.
 - **Assistente sul dispositivo**: chiedi "trova i file più grandi" o "spiegami questo errore" e ottieni il
   comando giusto con una spiegazione semplice. Usa Apple Intelligence sul dispositivo: niente esce da lì.
 - **Handoff**: inizi sul Mac, continui sull'iPad con un tocco, sullo stesso server.
@@ -223,7 +230,45 @@ arancione segnala i comandi che cancellano o modificano qualcosa. L'assistente n
 **Inserisci** scrive il comando nel terminale e lo lanci tu con Invio. Serve Apple Intelligence (iPhone 15 Pro
 o successivi, iPad e Mac con Apple silicon, iOS/iPadOS/macOS 26); funziona anche offline.
 
-### 12. Guida interna
+### 12. Snippet e cronologia
+
+Durante una sessione tocca **{} Comandi** nella Command Deck o nella barra in alto (⇧⌘S).
+
+- Gli **snippet** sono comandi salvati che valgono per tutti i server e arrivano sugli altri dispositivi con
+  iCloud. Tocca **+**, dai un nome e un comando, scegli se eseguirlo subito o solo scriverlo.
+- Le variabili tra doppie graffe adattano il comando: `{{host}}`, `{{user}}`, `{{port}}`, `{{label}}` e
+  `{{dir}}` (la cartella corrente) si riempiono da sole; qualsiasi altro nome, come `{{servizio}}` in
+  `journalctl -u {{servizio}}`, viene chiesto ogni volta.
+- La **cronologia** elenca i comandi dati in quel server, dal più recente. Toccane uno per riscriverlo; tienilo
+  premuto per eseguirlo o salvarlo come snippet. Resta sul dispositivo e, come la shell, salta i comandi che
+  iniziano con uno spazio.
+
+### 13. Importare da ~/.ssh
+
+Se usi già `ssh` su un Mac o un PC, porta i server in Termina in un colpo solo: tieni premuto **+** nell'elenco
+dei server (sul Mac anche **Archivio → Importa da ~/.ssh…**) e scegli la cartella `.ssh`. Sul Mac è nella
+cartella Inizio ed è nascosta: nel pannello premi **⌘⇧.** per vederla. Su iPhone e iPad copiala prima in
+iCloud Drive, oppure incolla il solo file `config`.
+
+Termina legge `Host`, `HostName`, `User`, `Port`, `IdentityFile`, `ProxyJump`, `LocalForward`, `RemoteForward`
+e `ForwardAgent`, include le chiavi private e considera attendibili le host key Ed25519 di `known_hosts` (anche
+cifrate). Vedi un'anteprima e scegli cosa importare; i server che hai già sono deselezionati. I server senza
+chiave chiedono la password al primo collegamento e poi la ricordano. I tuoi file non vengono mai modificati.
+
+### 14. Jump host
+
+Per un server raggiungibile solo attraverso un altro (un bastion): aggiungi il bastion come un server normale,
+poi modifica la destinazione e sceglilo in **Instradamento → Jump host**. Termina passa da lì come `ssh -J`, con
+un solo Face ID, e la connessione resta cifrata fino alla destinazione. Si possono concatenare fino a 4 salti.
+
+### 15. Inoltro dell'agente SSH
+
+Attiva **Instradamento → Inoltra l'agente SSH** per un server e i programmi che girano lì, come `git` o `ssh`,
+potranno usare la chiave con cui sei entrato senza che venga mai copiata: per esempio `git pull` da GitHub con
+la chiave dell'iPhone. Sul server `ssh-add -l` la mostra. Attivalo solo sui server di cui ti fidi: finché sei
+collegato, chi controlla il server può usare la chiave. Funziona con chiavi Ed25519 e Secure Enclave.
+
+### 16. Guida interna
 
 Ogni funzione è spiegata passo per passo dentro l'app: **Impostazioni → Guida**, il link **Come si usa Termina**
 nella schermata iniziale o **Aiuto → Guida di Termina** (⌘?) sul Mac.
@@ -239,6 +284,7 @@ nella schermata iniziale o **Aiuto → Guida di Termina** (⌘?) sul Mac.
 | ⌘+ ⌘- ⌘0 | Dimensione del testo |
 | ⌘. | Esc |
 | ⇧⌘T | Tunnel |
+| ⇧⌘S | Snippet e cronologia |
 | ⇧⌘F, ⌘↑ | File, cartella superiore |
 | ⌘N / ⌘, | Nuovo server / Impostazioni |
 | ⌘R | Riconnetti |
