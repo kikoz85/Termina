@@ -37,7 +37,8 @@
   - [14. Jump hosts](#14-jump-hosts)
   - [15. SSH agent forwarding](#15-ssh-agent-forwarding)
   - [16. Siri, Shortcuts and Spotlight](#16-siri-shortcuts-and-spotlight)
-  - [17. Built-in guide](#17-built-in-guide)
+  - [17. Two sessions side by side](#17-two-sessions-side-by-side)
+  - [18. Built-in guide](#18-built-in-guide)
   - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Security and privacy](#security-and-privacy)
 - [Troubleshooting](#troubleshooting)
@@ -47,6 +48,7 @@
 
 - **Real terminal**: xterm-256color with GPU (Metal) rendering, true colour, vim, htop, tmux, colour profiles.
 - **Tabs**: several servers open at once, switch with ⌘1…⌘9.
+- **Two sessions side by side** on iPad and Mac, next to each other or stacked: logs on one server while you work on another.
 - **Quick Connect**: type `user@host` and you are in, like `ssh` in Terminal.
 - **Command Deck**: Esc, Tab, Ctrl, Alt, arrows, symbols and your own one-tap macros.
 - **Files (SFTP)** next to the terminal: upload, download, preview, edit text files, change permissions.
@@ -73,6 +75,10 @@
 | Port forwarding with live status | Server editor: icon, colour, group, authentication |
 | ![iPad terminal](screenshots/ipad-terminal-en.jpg) | ![Settings](screenshots/mac-settings-en.jpg) |
 | iPad with the Command Deck | Settings |
+| ![Two sessions side by side on iPad](screenshots/ipad-split-en.jpg) | ![Two sessions side by side on Mac](screenshots/mac-split-en.jpg) |
+| Two sessions side by side on iPad | …and on the Mac |
+| ![Snippets](screenshots/mac-snippets-en.jpg) | ![Import from ~/.ssh](screenshots/mac-import-en.jpg) |
+| Snippets with `{{variables}}` | Import from `~/.ssh`, with preview |
 
 <p align="center">
   <img src="screenshots/iphone-welcome-en.jpg" width="240" alt="iPhone welcome screen">
@@ -99,8 +105,9 @@ over the Internet or through a VPN such as Tailscale.
 
 ## Download
 
-Termina is coming to the App Store for iPhone, iPad and Mac. New versions and release notes are published on the
-[Releases](https://github.com/kikoz85/Termina/releases) page of this repository.
+Termina is coming to the App Store for iPhone, iPad and Mac. The **Mac version** can already be downloaded from
+the [Releases](https://github.com/kikoz85/Termina/releases) page of this repository, where every new version is
+published with its release notes.
 
 ## User guide
 
@@ -189,6 +196,11 @@ Open **Settings** with the gear button (or ⌘,):
 - **Language**: *Automatic* follows your system language (English if your language is not available), or choose
   English, Italiano, Français, Deutsch or Español. The new language applies the next time the app opens; on Mac you can restart it right away.
 
+**Settings → About** has the guide, the version, the support and privacy pages and a link to the developer's
+website.
+
+![Settings, About section](screenshots/mac-about-en.jpg)
+
 ### 9. Sync between iPhone, iPad and Mac
 
 Termina keeps your devices in step through **your own iCloud**: there is no Termina account to create.
@@ -243,6 +255,8 @@ During a session tap **{} Commands** in the Command Deck or in the toolbar (⇧�
   hold to run it or save it as a snippet. It stays on the device, and like the shell it skips commands that
   start with a space.
 
+![Snippets on iPad](screenshots/ipad-snippets-en.jpg)
+
 ### 13. Import from ~/.ssh
 
 If you already use `ssh` on a Mac or PC, bring your servers over in one go: touch and hold **+** in the
@@ -280,7 +294,24 @@ Termina's actions appear on their own, with your servers and snippets. There's n
 Termina always opens before connecting, so Face ID, host key confirmation and passwords work as usual. If a
 snippet has values to fill in, the app asks for them before running it.
 
-### 17. Built-in guide
+### 17. Two sessions side by side
+
+On iPad and Mac you can keep two sessions on the same screen: for example a server's logs while you work on
+another one.
+
+1. During a session tap **Split** (the icon with two rectangles) in the toolbar and pick an open session or a
+   saved server.
+2. Tap a pane to type in it. The active pane has a coloured header and gets the keyboard, the Command Deck,
+   files and tunnels.
+3. From the same menu choose **Stacked** or **Side by Side**, or **Close Split** to go back to one session.
+
+Each pane has its own size and the terminal adapts its columns and rows, also when the keyboard or the Files
+panel opens. With a keyboard: **⌘D** splits with the next tab, **⌘⌥←** / **⌘⌥→** switch pane, **⇧⌘D** goes
+back to one session. On iPhone and in narrow windows (Slide Over) only the active pane is shown.
+
+![Two sessions side by side on iPad](screenshots/ipad-split-en.jpg)
+
+### 18. Built-in guide
 
 Every feature is explained step by step inside the app: **Settings → Guide**, the **How to Use Termina** link
 on the welcome screen, or **Help → Termina Guide** (⌘?) on the Mac.
@@ -297,6 +328,8 @@ on the welcome screen, or **Help → Termina Guide** (⌘?) on the Mac.
 | ⌘. | Esc |
 | ⇧⌘T | Tunnels |
 | ⇧⌘S | Snippets and history |
+| ⌘D / ⇧⌘D | Split with the next tab / back to one session |
+| ⌘⌥← ⌘⌥→ | Switch pane |
 | ⇧⌘F, ⌘↑ | Files, parent folder |
 | ⌘N / ⌘, | New server / Settings |
 | ⌘R | Reconnect |
@@ -330,5 +363,7 @@ Full policy: [Privacy](https://kikoz85.github.io/Termina/en/privacy.html).
 
 - Help and contact: [Support page](https://kikoz85.github.io/Termina/en/support.html)
 - Bugs and suggestions: open an [issue](https://github.com/kikoz85/Termina/issues) or write to enricofanucchi@gmail.com
+- Support development: [GitHub Sponsors](https://github.com/sponsors/kikoz85)
+- Developer: Enrico Fanucchi · [www.enricofanucchi.com](https://www.enricofanucchi.com)
 
 © 2026 Enrico Fanucchi

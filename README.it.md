@@ -37,7 +37,8 @@
   - [14. Jump host](#14-jump-host)
   - [15. Inoltro dell'agente SSH](#15-inoltro-dellagente-ssh)
   - [16. Siri, Comandi rapidi e Spotlight](#16-siri-comandi-rapidi-e-spotlight)
-  - [17. Guida interna](#17-guida-interna)
+  - [17. Due sessioni affiancate](#17-due-sessioni-affiancate)
+  - [18. Guida interna](#18-guida-interna)
   - [Scorciatoie da tastiera](#scorciatoie-da-tastiera)
 - [Sicurezza e privacy](#sicurezza-e-privacy)
 - [Risoluzione dei problemi](#risoluzione-dei-problemi)
@@ -47,6 +48,7 @@
 
 - **Terminale vero**: xterm-256color con rendering su GPU (Metal), truecolor, vim, htop, tmux, profili colore.
 - **Tab**: più server aperti insieme, si passa dall'uno all'altro con ⌘1…⌘9.
+- **Due sessioni affiancate** su iPad e Mac, una accanto all'altra o una sopra l'altra: i log di un server mentre lavori su un altro.
 - **Connessione rapida**: scrivi `utente@host` e sei dentro, come `ssh` nel Terminale.
 - **Command Deck**: Esc, Tab, Ctrl, Alt, frecce, simboli e le tue macro a un tocco.
 - **File (SFTP)** accanto al terminale: carica, scarica, anteprima, modifica dei file di testo, permessi.
@@ -73,6 +75,10 @@
 | Port forwarding con stato in tempo reale | Modifica di un server: icona, colore, gruppo, autenticazione |
 | ![Terminale su iPad](screenshots/ipad-terminal-it.jpg) | ![Impostazioni](screenshots/mac-settings-it.jpg) |
 | iPad con la Command Deck | Impostazioni |
+| ![Due sessioni affiancate su iPad](screenshots/ipad-split-it.jpg) | ![Due sessioni affiancate su Mac](screenshots/mac-split-it.jpg) |
+| Due sessioni affiancate su iPad | …e sul Mac |
+| ![Snippet](screenshots/mac-snippets-it.jpg) | ![Import da ~/.ssh](screenshots/mac-import-it.jpg) |
+| Snippet con le `{{variabili}}` | Import da `~/.ssh`, con anteprima |
 
 <p align="center">
   <img src="screenshots/iphone-welcome-it.jpg" width="240" alt="iPhone: schermata iniziale">
@@ -99,8 +105,9 @@ locale, via Internet o tramite una VPN come Tailscale.
 
 ## Download
 
-Termina arriverà sull'App Store per iPhone, iPad e Mac. Le nuove versioni e le note di rilascio sono pubblicate
-nella pagina [Releases](https://github.com/kikoz85/Termina/releases) di questo repository.
+Termina arriverà sull'App Store per iPhone, iPad e Mac. La **versione per Mac** si scarica già dalla pagina
+[Releases](https://github.com/kikoz85/Termina/releases) di questo repository, dove esce ogni nuova versione con
+le sue note di rilascio.
 
 ## Guida all'uso
 
@@ -192,6 +199,11 @@ Apri le **Impostazioni** con l'ingranaggio (o ⌘,):
   scegli English, Italiano, Français, Deutsch o Español. La nuova lingua vale dalla prossima apertura dell'app;
   sul Mac puoi riavviarla subito.
 
+In **Impostazioni → Informazioni** trovi la guida, la versione, le pagine di supporto e privacy e il link al sito
+dello sviluppatore.
+
+![Impostazioni, sezione Informazioni](screenshots/mac-about-it.jpg)
+
 ### 9. Sincronizzazione tra iPhone, iPad e Mac
 
 Termina tiene allineati i tuoi dispositivi attraverso **il tuo iCloud**: non c'è un account Termina da creare.
@@ -245,6 +257,8 @@ Durante una sessione tocca **{} Comandi** nella Command Deck o nella barra in al
   premuto per eseguirlo o salvarlo come snippet. Resta sul dispositivo e, come la shell, salta i comandi che
   iniziano con uno spazio.
 
+![Snippet su iPad](screenshots/ipad-snippets-it.jpg)
+
 ### 13. Importare da ~/.ssh
 
 Se usi già `ssh` su un Mac o un PC, porta i server in Termina in un colpo solo: tieni premuto **+** nell'elenco
@@ -283,7 +297,25 @@ Le azioni di Termina compaiono da sole, con i tuoi server e i tuoi snippet. Non 
 Termina si apre sempre prima di collegarsi: Face ID, conferma della host key e password funzionano come al
 solito. Se uno snippet ha valori da riempire, l'app te li chiede prima di eseguirlo.
 
-### 17. Guida interna
+### 17. Due sessioni affiancate
+
+Su iPad e Mac puoi tenere due sessioni sullo stesso schermo: per esempio i log di un server mentre lavori su
+un altro.
+
+1. Durante una sessione tocca **Affianca** (l'icona con due rettangoli) nella barra in alto e scegli una
+   sessione aperta o un server salvato.
+2. Tocca un riquadro per scriverci. Quello attivo ha l'intestazione colorata e riceve la tastiera, la Command
+   Deck, i file e i tunnel.
+3. Dallo stesso menu scegli **Uno sopra l'altro** o **Uno accanto all'altro**, oppure **Chiudi riquadri** per
+   tornare a una sessione sola.
+
+Ogni riquadro ha la sua grandezza e il terminale adatta colonne e righe, anche quando si apre la tastiera o il
+pannello File. Con la tastiera: **⌘D** affianca la tab successiva, **⌘⌥←** / **⌘⌥→** cambiano riquadro,
+**⇧⌘D** torna a una sessione. Su iPhone e nelle finestre strette (Slide Over) si vede solo il riquadro attivo.
+
+![Due sessioni affiancate su iPad](screenshots/ipad-split-it.jpg)
+
+### 18. Guida interna
 
 Ogni funzione è spiegata passo per passo dentro l'app: **Impostazioni → Guida**, il link **Come si usa Termina**
 nella schermata iniziale o **Aiuto → Guida di Termina** (⌘?) sul Mac.
@@ -300,6 +332,8 @@ nella schermata iniziale o **Aiuto → Guida di Termina** (⌘?) sul Mac.
 | ⌘. | Esc |
 | ⇧⌘T | Tunnel |
 | ⇧⌘S | Snippet e cronologia |
+| ⌘D / ⇧⌘D | Affianca la tab successiva / una sessione sola |
+| ⌘⌥← ⌘⌥→ | Cambia riquadro |
 | ⇧⌘F, ⌘↑ | File, cartella superiore |
 | ⌘N / ⌘, | Nuovo server / Impostazioni |
 | ⌘R | Riconnetti |
@@ -333,5 +367,7 @@ Informativa completa: [Privacy](https://kikoz85.github.io/Termina/privacy.html).
 
 - Aiuto e contatti: [pagina di Supporto](https://kikoz85.github.io/Termina/support.html)
 - Bug e suggerimenti: apri una [issue](https://github.com/kikoz85/Termina/issues) o scrivi a enricofanucchi@gmail.com
+- Sostieni lo sviluppo: [GitHub Sponsors](https://github.com/sponsors/kikoz85)
+- Sviluppatore: Enrico Fanucchi · [www.enricofanucchi.com](https://www.enricofanucchi.com)
 
 © 2026 Enrico Fanucchi
