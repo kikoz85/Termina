@@ -30,6 +30,7 @@
   - [7. Sessioni che sopravvivono: tmux](#7-sessioni-che-sopravvivono-tmux)
   - [8. Impostazioni e lingua](#8-impostazioni-e-lingua)
   - [9. Sincronizzazione tra iPhone, iPad e Mac](#9-sincronizzazione-tra-iphone-ipad-e-mac)
+  - [10. Handoff: continuare su un altro dispositivo](#10-handoff-continuare-su-un-altro-dispositivo)
   - [Scorciatoie da tastiera](#scorciatoie-da-tastiera)
 - [Sicurezza e privacy](#sicurezza-e-privacy)
 - [Risoluzione dei problemi](#risoluzione-dei-problemi)
@@ -45,6 +46,7 @@
 - **Port forwarding**: tunnel locali (-L) e remoti (-R) con stato e traffico in tempo reale.
 - **Credenziali sicure**: password e chiavi nel Portachiavi, sbloccate con Face ID o Touch ID; chiavi hardware
   generate nel **Secure Enclave**, che non possono mai essere copiate.
+- **Handoff**: inizi sul Mac, continui sull'iPad con un tocco, sullo stesso server.
 - **Sincronizzazione iCloud**: server, macro, tunnel, password e chiavi su tutti i tuoi iPhone, iPad e Mac,
   cifrati end-to-end, senza creare account.
 - **Tailscale** riconosciuto da solo; **tmux** tiene viva la shell quando la connessione cade.
@@ -191,6 +193,17 @@ Apple Account su ogni dispositivo.
 - Le modifiche arrivano in pochi secondi; **Sincronizza ora** nelle Impostazioni forza un controllo. Se due
   dispositivi modificano lo stesso server, vince la modifica più recente.
 - Le password salvate prima di attivare la sincronizzazione partono la prima volta che le usi per collegarti.
+
+### 10. Handoff: continuare su un altro dispositivo
+
+Mentre una sessione è aperta su un dispositivo, Termina la offre agli altri: l'icona di Termina compare in fondo
+al **Dock** su Mac e iPad e nel **selettore app** su iPhone. Toccala e lì si apre lo stesso server.
+
+- Con una **sessione tmux** impostata per il server ritrovi la stessa identica shell, con tutto ancora in corso.
+- Senza tmux ottieni una shell nuova nella **stessa cartella**, se la shell la comunica (sequenza OSC 7; in bash
+  aggiungi a `~/.bashrc` `PROMPT_COMMAND='printf "\e]7;file://%s%s\e\\" "$HOSTNAME" "$PWD"'`).
+- Serve lo stesso Apple Account, Bluetooth e Wi‑Fi attivi e **Handoff** abilitato (Impostazioni → Generali →
+  AirPlay e Continuity su iPhone/iPad, Impostazioni di Sistema → Generali → AirDrop e Handoff sul Mac).
 
 ### Scorciatoie da tastiera
 

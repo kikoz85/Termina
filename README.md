@@ -30,6 +30,7 @@
   - [7. Sessions that survive: tmux](#7-sessions-that-survive-tmux)
   - [8. Settings and language](#8-settings-and-language)
   - [9. Sync between iPhone, iPad and Mac](#9-sync-between-iphone-ipad-and-mac)
+  - [10. Handoff: continue on another device](#10-handoff-continue-on-another-device)
   - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Security and privacy](#security-and-privacy)
 - [Troubleshooting](#troubleshooting)
@@ -45,6 +46,7 @@
 - **Port forwarding**: local (-L) and remote (-R) tunnels with live status and traffic.
 - **Secure credentials**: passwords and keys in the Keychain, unlocked with Face ID or Touch ID;
   hardware keys generated in the **Secure Enclave** that can never be copied.
+- **Handoff**: start on the Mac, continue on the iPad with one tap, on the same server.
 - **iCloud sync**: servers, macros, tunnels, passwords and keys on all your iPhone, iPad and Mac,
   end-to-end encrypted, with no account to create.
 - **Tailscale** detected automatically; **tmux** keeps your shell alive when the connection drops.
@@ -188,6 +190,18 @@ on every device.
 - Changes arrive within seconds; **Sync Now** in Settings forces a check. If two devices edit the same
   server, the most recent change wins.
 - Passwords saved before sync was turned on are uploaded the first time you connect with them.
+
+### 10. Handoff: continue on another device
+
+While a session is open on one device, Termina offers it to your others: the Termina icon appears at the
+end of the **Dock** on the Mac and iPad, and in the **app switcher** on iPhone. Tap it and the same server
+opens there.
+
+- With a **tmux session** set for the server you land in the very same shell, with everything still running.
+- Without tmux you get a new shell in the **same folder**, if your shell reports it (escape sequence OSC 7; in bash
+  add to `~/.bashrc` `PROMPT_COMMAND='printf "\e]7;file://%s%s\e\\" "$HOSTNAME" "$PWD"'`).
+- It needs the same Apple Account, Bluetooth and Wi‑Fi on, and **Handoff** enabled (Settings → General →
+  AirPlay & Continuity on iPhone/iPad, System Settings → General → AirDrop & Handoff on Mac).
 
 ### Keyboard shortcuts
 
