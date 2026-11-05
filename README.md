@@ -13,6 +13,12 @@
   <b>English</b> · <a href="README.it.md">Italiano</a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/kikoz85/Termina/releases/latest"><img src="https://img.shields.io/github/v/release/kikoz85/Termina?label=download%20for%20Mac&color=2ED3B7" alt="Download"></a>
+  <a href="https://www.enricofanucchi.com/en/app/termina?utm_source=github&utm_campaign=termina"><img src="https://img.shields.io/badge/website-enricofanucchi.com-F7941D" alt="Website"></a>
+  <a href="https://github.com/sponsors/kikoz85"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white" alt="Sponsor Termina on GitHub"></a>
+</p>
+
 ![Termina on Mac: server list and terminal](screenshots/mac-terminal-en.jpg)
 
 ## Contents
