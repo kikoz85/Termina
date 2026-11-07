@@ -5,7 +5,7 @@
 <h1 align="center">Termina</h1>
 
 <p align="center">
-  <b>A native SSH client for iPhone, iPad and Mac.</b><br>
+  <b>A native SSH client for iPhone, iPad and Mac, also on Windows, Linux and Android.</b><br>
   Fast, light and private: your passwords and keys never leave your device.
 </p>
 
@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/kikoz85/Termina/releases/latest"><img src="https://img.shields.io/github/v/release/kikoz85/Termina?label=download%20for%20Mac&color=2ED3B7" alt="Download"></a>
+  <a href="https://github.com/kikoz85/Termina/releases/latest"><img src="https://img.shields.io/github/v/release/kikoz85/Termina?label=download&color=2ED3B7" alt="Download"></a>
   <a href="https://www.enricofanucchi.com/en/app/termina?utm_source=github&utm_campaign=termina"><img src="https://img.shields.io/badge/website-enricofanucchi.com-F7941D" alt="Website"></a>
   <a href="https://github.com/sponsors/kikoz85"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white" alt="Sponsor Termina on GitHub"></a>
 </p>
@@ -109,11 +109,31 @@ On older systems the app works the same, with a classic (non-glass) look. You al
 connect to (Linux, macOS, BSD, Raspberry Pi, NAS, router…) reachable from your device: on your network,
 over the Internet or through a VPN such as Tailscale.
 
+**Windows, Linux and Android**: Windows 10 or 11 (x64) and Windows 11 on ARM; Linux x64 or ARM64 with GTK 3
+(Debian, Ubuntu, Fedora, Raspberry Pi OS 64-bit…); Android 7.0 or later, phones and tablets. Same interface:
+phones look like iPhone, tablets and computers like iPad and Mac. Not available there: iCloud sync, Handoff,
+Siri and Shortcuts, Spotlight, Secure Enclave keys and the assistant. In this guide, ⌘ is Ctrl on Windows and Linux.
+
 ## Download
 
-Termina is coming to the App Store for iPhone, iPad and Mac. The **Mac version** can already be downloaded from
-the [Releases](https://github.com/kikoz85/Termina/releases) page of this repository, where every new version is
-published with its release notes.
+Termina is coming to the App Store for iPhone, iPad and Mac. The versions for **Mac, Windows, Linux and Android**
+can already be downloaded from the [Releases](https://github.com/kikoz85/Termina/releases) page of this repository,
+where every new version is published with its release notes. They update themselves.
+
+| System | Download |
+|---|---|
+| Mac (macOS 15+) | [Termina DMG](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.8.1.dmg), signed and notarized by Apple |
+| Windows x64 | [Installer](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-windows-x64-setup.exe) |
+| Windows ARM64 | [Installer](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-windows-arm64-setup.exe) |
+| Linux x64 | [.deb](https://github.com/kikoz85/Termina/releases/download/v0.9.0/termina_0.9.0_amd64.deb) · [.tar.gz](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-linux-x64.tar.gz) |
+| Linux ARM64 | [.deb](https://github.com/kikoz85/Termina/releases/download/v0.9.0/termina_0.9.0_arm64.deb) · [.tar.gz](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-linux-arm64.tar.gz) |
+| Android | [APK](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-android-arm64.apk) (most phones and tablets); older 32-bit devices and x86_64 on the [release page](https://github.com/kikoz85/Termina/releases/latest) |
+
+- **Windows**: installs for your user, no administrator needed. The installer is not signed with a certificate yet,
+  so SmartScreen may warn you: choose *More info › Run anyway*.
+- **Linux**: `sudo apt install ./termina_<version>_amd64.deb`, or extract the `.tar.gz` anywhere and run `termina`.
+  Passwords and keys go to the GNOME or KDE keyring.
+- **Android**: open the APK and allow installing from that source.
 
 ## User guide
 
