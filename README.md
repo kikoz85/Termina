@@ -110,7 +110,8 @@ connect to (Linux, macOS, BSD, Raspberry Pi, NAS, router…) reachable from your
 over the Internet or through a VPN such as Tailscale.
 
 **Windows, Linux and Android**: Windows 10 (1809) or 11 on x64, Windows 11 on ARM; Linux x64 or ARM64 with GTK 3
-(Debian, Ubuntu, Fedora, Raspberry Pi OS 64-bit…); Android 7.0 or later, phones and tablets. Same interface:
+(Debian 12+, Ubuntu 22.04+, Fedora 38+, Raspberry Pi OS 64-bit Bookworm or later); Android 7.0 (API 24) or later,
+phones and tablets. Same interface:
 phones look like iPhone, tablets and computers like iPad and Mac. Not available there: iCloud sync, Handoff,
 Siri and Shortcuts, Spotlight, Secure Enclave keys and the assistant. In this guide, ⌘ is Ctrl on Windows and Linux.
 

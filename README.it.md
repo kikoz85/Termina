@@ -110,7 +110,8 @@ SSH a cui collegarsi (Linux, macOS, BSD, Raspberry Pi, NAS, router…) raggiungi
 locale, via Internet o tramite una VPN come Tailscale.
 
 **Windows, Linux e Android**: Windows 10 (1809) o 11 su x64, Windows 11 su ARM; Linux x64 o ARM64 con GTK 3
-(Debian, Ubuntu, Fedora, Raspberry Pi OS a 64 bit…); Android 7.0 o successivo, telefoni e tablet. Stessa
+(Debian 12+, Ubuntu 22.04+, Fedora 38+, Raspberry Pi OS a 64 bit Bookworm o successivo); Android 7.0 (API 24) o
+successivo, telefoni e tablet. Stessa
 interfaccia: sul telefono come iPhone, su tablet e computer come iPad e Mac. Lì non ci sono: sincronizzazione
 iCloud, Handoff, Siri e Comandi rapidi, Spotlight, chiavi Secure Enclave e assistente. In questa guida, ⌘ su
 Windows e Linux è Ctrl.
