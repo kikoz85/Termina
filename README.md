@@ -109,7 +109,7 @@ On older systems the app works the same, with a classic (non-glass) look. You al
 connect to (Linux, macOS, BSD, Raspberry Pi, NAS, router…) reachable from your device: on your network,
 over the Internet or through a VPN such as Tailscale.
 
-**Windows, Linux and Android**: Windows 10 or 11 (x64) and Windows 11 on ARM; Linux x64 or ARM64 with GTK 3
+**Windows, Linux and Android**: Windows 10 (1809) or 11 on x64, Windows 11 on ARM; Linux x64 or ARM64 with GTK 3
 (Debian, Ubuntu, Fedora, Raspberry Pi OS 64-bit…); Android 7.0 or later, phones and tablets. Same interface:
 phones look like iPhone, tablets and computers like iPad and Mac. Not available there: iCloud sync, Handoff,
 Siri and Shortcuts, Spotlight, Secure Enclave keys and the assistant. In this guide, ⌘ is Ctrl on Windows and Linux.
@@ -122,12 +122,13 @@ where every new version is published with its release notes. They update themsel
 
 | System | Download |
 |---|---|
-| Mac (macOS 15+) | [Termina DMG](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0.dmg), signed and notarized by Apple |
-| Windows x64 | [Installer](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-windows-x64-setup.exe) |
-| Windows ARM64 | [Installer](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-windows-arm64-setup.exe) |
-| Linux x64 | [.deb](https://github.com/kikoz85/Termina/releases/download/v0.9.0/termina_0.9.0_amd64.deb) · [.tar.gz](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-linux-x64.tar.gz) |
-| Linux ARM64 | [.deb](https://github.com/kikoz85/Termina/releases/download/v0.9.0/termina_0.9.0_arm64.deb) · [.tar.gz](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-linux-arm64.tar.gz) |
-| Android | [APK](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-android-arm64.apk) (most phones and tablets); older 32-bit devices and x86_64 on the [release page](https://github.com/kikoz85/Termina/releases/latest) |
+| Mac (macOS 15+) | [Termina DMG](https://github.com/kikoz85/Termina/releases/download/v1.0.0/Termina-1.0.0.dmg), signed and notarized by Apple |
+| Windows x64 and ARM64 | [Microsoft Store](https://apps.microsoft.com/detail/9N23NZWQ1Q40) (*Termina - SSH Client*, available after Microsoft's review) |
+| Windows x64 | [Installer](https://github.com/kikoz85/Termina/releases/download/v1.0.0/Termina-1.0.0-windows-x64-setup.exe) |
+| Windows ARM64 | [Installer](https://github.com/kikoz85/Termina/releases/download/v1.0.0/Termina-1.0.0-windows-arm64-setup.exe) |
+| Linux x64 | [.deb](https://github.com/kikoz85/Termina/releases/download/v1.0.0/termina_1.0.0_amd64.deb) · [.tar.gz](https://github.com/kikoz85/Termina/releases/download/v1.0.0/Termina-1.0.0-linux-x64.tar.gz) |
+| Linux ARM64 | [.deb](https://github.com/kikoz85/Termina/releases/download/v1.0.0/termina_1.0.0_arm64.deb) · [.tar.gz](https://github.com/kikoz85/Termina/releases/download/v1.0.0/Termina-1.0.0-linux-arm64.tar.gz) |
+| Android | [APK](https://github.com/kikoz85/Termina/releases/download/v1.0.0/Termina-1.0.0-android-arm64.apk) (most phones and tablets); older 32-bit devices and x86_64 on the [release page](https://github.com/kikoz85/Termina/releases/latest) |
 
 - **Windows**: installs for your user, no administrator needed. The installer is not signed with a certificate yet,
   so SmartScreen may warn you: choose *More info › Run anyway*.
