@@ -123,7 +123,7 @@ ogni nuova versione con le sue note di rilascio. Si aggiornano da sole.
 
 | Sistema | Download |
 |---|---|
-| Mac (macOS 15+) | [DMG di Termina](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.8.1.dmg), firmato e notarizzato da Apple |
+| Mac (macOS 15+) | [DMG di Termina](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0.dmg), firmato e notarizzato da Apple |
 | Windows x64 | [Installer](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-windows-x64-setup.exe) |
 | Windows ARM64 | [Installer](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-windows-arm64-setup.exe) |
 | Linux x64 | [.deb](https://github.com/kikoz85/Termina/releases/download/v0.9.0/termina_0.9.0_amd64.deb) · [.tar.gz](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-linux-x64.tar.gz) |

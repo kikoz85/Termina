@@ -122,7 +122,7 @@ where every new version is published with its release notes. They update themsel
 
 | System | Download |
 |---|---|
-| Mac (macOS 15+) | [Termina DMG](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.8.1.dmg), signed and notarized by Apple |
+| Mac (macOS 15+) | [Termina DMG](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0.dmg), signed and notarized by Apple |
 | Windows x64 | [Installer](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-windows-x64-setup.exe) |
 | Windows ARM64 | [Installer](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-windows-arm64-setup.exe) |
 | Linux x64 | [.deb](https://github.com/kikoz85/Termina/releases/download/v0.9.0/termina_0.9.0_amd64.deb) · [.tar.gz](https://github.com/kikoz85/Termina/releases/download/v0.9.0/Termina-0.9.0-linux-x64.tar.gz) |
